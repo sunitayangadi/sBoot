@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sboot
+  name: sboot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sboot
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sboot
+    spec:
+      containers:
+      - image: chinnuy218/sboot-app:latest
+        name: sbootproject
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Servicei
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sboot
+  name: sboot
+spec:
+  ports:
+  - name: 8091-8091
+    port: 8090
+    protocol: TCP
+    targetPort: 8091
+  - name: 8091-8091
+    port: 8090
+    protocol: TCP
+    targetPort: 8091
+  selector:
+    app: sboot
+  type: LoadBalancer
+status:
+  loadBalancer: {}
