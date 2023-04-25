@@ -24,7 +24,7 @@ spec:
 status: {}
 ---
 apiVersion: v1
-kind: Servicei
+kind: Service
 metadata:
   creationTimestamp: null
   labels:
@@ -33,13 +33,13 @@ metadata:
 spec:
   ports:
   - name: 8091-8091
-    port: 8090
+    port: 8091
     protocol: TCP
     targetPort: 8091
-  - name: 8091-8091
+  - name: 8090-8090
     port: 8090
     protocol: TCP
-    targetPort: 8091
+    targetPort: 8090
   selector:
     app: sboot
   type: LoadBalancer
