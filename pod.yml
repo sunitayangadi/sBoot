@@ -18,7 +18,7 @@ spec:
         app: sboot
     spec:
       containers:
-      - image: chinnuy218/sboot-devops:13
+      - image: chinnuy218/sbootpipeline
         name: sbootproject
         resources: {}
 status: {}
